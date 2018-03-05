@@ -14,7 +14,7 @@ class Game
 
   def get_letters(word)
     if word == nil || word == ""
-      abort "Вы не ввели слово для игры"
+      puts "Вы не ввели слово для игры"
     end
     UnicodeUtils.downcase(word).split('')
   end
