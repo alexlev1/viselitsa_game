@@ -1,3 +1,5 @@
+require 'rspec'
+
 require_relative "../lib/game"
 require "unicode_utils/downcase"
 
@@ -12,6 +14,7 @@ describe Game do
       game.next_step("д")
       game.next_step("к")
       expect(game.status).to eq :won
+      expect(game.errors).to eq 0
     end
   end
 
@@ -28,6 +31,7 @@ describe Game do
       game.next_step("о")
       game.next_step("л")
       expect(game.status).to eq :lost
+      expect(game.errors).to eq 7
     end
   end
 end
