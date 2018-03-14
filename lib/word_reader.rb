@@ -4,6 +4,7 @@ class WordReader
       file = File.readlines(file_name)
     rescue SystemCallError => error
       puts "Ошибка! Проверьте наличие списка со словами."
+      abort error.message
     end
     file.sample.chomp
   end

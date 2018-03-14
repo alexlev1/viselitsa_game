@@ -9,7 +9,13 @@ VERSION = "Игра виселица. Версия 4."
 
 word_reader = WordReader.new
 words_file_name = current_path + '/data/words.txt'
-word = word_reader.read_from_file(words_file_name)
+
+# Ввод готового слова из консоли
+if ARGV[0] == nil
+  word = word_reader.read_from_file(words_file_name)
+else
+  word = ARGV[0]
+end
 
 game = Game.new(word)
 game.version = VERSION
